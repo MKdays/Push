@@ -27,7 +27,7 @@ for i in file_list:
         n += 1
         rel_path = os.path.dirname(os.path.relpath(i)) #상대경로
         file = os.path.basename(i) #파일명 <--- 중복될 수 있으므로 딕셔너리의 Key 위치에 있으면 안됨!
-        path = rel_path[len(target):].strip("\\") #현재경로는 삭제하고 앞 뒤 슬래쉬 삭제
+        path = rel_path[len(target):].replace("\\","/")   #현재경로는 삭제하고 앞 뒤 슬래쉬 삭제
         date = str(int(os.path.getmtime(i))) #파일 수정 날짜
         json_memory.update({n:[file,path,date]})
 
