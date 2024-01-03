@@ -38,3 +38,5 @@ with open(save_file, 'w', encoding='UTF8') as f:
 
 print("완료")
 print(n)
+
+#TEST
